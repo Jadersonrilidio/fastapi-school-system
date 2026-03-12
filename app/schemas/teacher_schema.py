@@ -2,7 +2,7 @@ from typing import TYPE_CHECKING
 from pydantic import BaseModel, ConfigDict, Field
 
 if TYPE_CHECKING:
-    from schemas.subject_schema import SubjectSummary
+    from app.schemas.subject_schema import SubjectSummary
 
 
 class TeacherBase(BaseModel):

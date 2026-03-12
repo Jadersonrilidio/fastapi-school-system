@@ -1,9 +1,9 @@
 from typing import TYPE_CHECKING
 from pydantic import BaseModel, ConfigDict, Field
-from schemas.profile_schema import ProfileCreate, ProfileUpdate, ProfileSummary
+from app.schemas.profile_schema import ProfileCreate, ProfileUpdate, ProfileSummary
 
 if TYPE_CHECKING:
-    from schemas.subject_schema import SubjectSummary
+    from app.schemas.subject_schema import SubjectSummary
 
 
 class StudentBase(BaseModel):

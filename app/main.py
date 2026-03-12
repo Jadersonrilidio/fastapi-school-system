@@ -1,10 +1,10 @@
 from fastapi import FastAPI, Depends, HTTPException, status
 from sqlalchemy.orm import Session, selectinload
 from typing import List
-import models, schemas
-from database import DataBase
-from settings import Settings
-from contextlib import asynccontextmanager
+from app import models, schemas
+from app.database import DataBase
+from app.settings import Settings
+# from contextlib import asynccontextmanager
 
 
 app_settings = Settings() # type: ignore
@@ -12,17 +12,17 @@ app_settings = Settings() # type: ignore
 db = DataBase(app_settings.DATABASE_URL)
 
 # https://fastapi.tiangolo.com/advanced/events/#lifespan
-@asynccontextmanager
-async def lifespan(app: FastAPI):
-    # db.drop_tables()
-    db.create_tables()
-    yield
+# @asynccontextmanager
+# async def lifespan(app: FastAPI):
+#     db.drop_tables()
+#     db.create_tables()
+#     yield
 
 app = FastAPI(
     title="School System",
     description="School API",
     version="1.0.0",
-    lifespan=lifespan
+    # lifespan=lifespan
 )
 
 
