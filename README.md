@@ -96,15 +96,14 @@ The project will gradually evolve toward a more scalable backend structure:
 
 ```
 app/
-
-main.py
-database.py
-
-models/
-schemas/
-repositories/
-services/
-routers/
+      main.py
+      core/
+      database/
+      models/
+      schemas/
+      repositories/
+      services/
+      routers/
 ```
 
 Architecture flow:
@@ -153,7 +152,7 @@ pip install -r requirements.txt
 Run the server:
 
 ```
-uvicorn main:app --reload
+uvicorn app.main:app --reload
 ```
 
 Open the API documentation:
